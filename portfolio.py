@@ -1,43 +1,32 @@
-import os
+import streamlit as st
 
-def clear_screen():
-    os.system('cls' if os.name == 'nt' else 'clear')
+st.set_page_config(page_title="Student Portfolio", layout="centered")
 
-def print_divider():
-    print("-" * 50)
+# Title and Subtitle
+st.title("🎓 John Doe")
+st.subheader("BS Computer Science Student")
+st.write("Welcome to my online portfolio!")
 
-def show_intro():
-    print("🎓 Student Portfolio")
-    print_divider()
-    print("Name: John Doe")
-    print("Course: BS Computer Science")
-    print("School: Example University")
-    print("Email: john.doe@example.com")
-    print_divider()
+# About Me Section
+st.header("📌 About Me")
+st.write("""
+I'm a computer science student passionate about learning and building projects.
+I enjoy solving problems using Python and exploring new tech.
+""")
 
-def show_projects():
-    print("📁 Projects")
-    print_divider()
-    print("1. Grade Calculator - A simple Python program to compute student grades.")
-    print("2. Attendance Tracker - CLI-based app to manage attendance.")
-    print("3. Personal Budget App - Tracks expenses and shows summaries.")
-    print_divider()
+# Projects Section
+st.header("🧠 Projects")
+st.markdown("- **Grade Calculator** – Computes grades based on input scores.")
+st.markdown("- **Attendance Tracker** – CLI app to track class attendance.")
+st.markdown("- **Budget App** – Helps manage student expenses.")
 
-def show_skills():
-    print("🛠 Skills")
-    print_divider()
-    print("- Python")
-    print("- HTML & CSS")
-    print("- Git & GitHub")
-    print("- Problem Solving")
-    print_divider()
+# Skills Section
+st.header("⚙️ Skills")
+skills = ["Python", "HTML & CSS", "Git & GitHub", "Problem Solving"]
+st.write(", ".join(skills))
 
-def main():
-    clear_screen()
-    show_intro()
-    show_projects()
-    show_skills()
-    print("Thank you for viewing my portfolio!")
-
-if __name__ == "__main__":
-    main()
+# Contact Section
+st.header("📬 Contact")
+st.write("📧 Email: john.doe@example.com")
+st.write("🔗 GitHub: [github.com/johndoe](https://github.com/johndoe)")
+st.write("💼 LinkedIn: [linkedin.com/in/johndoe](https://linkedin.com/in/johndoe)")
